@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 
+import Stars from './Stars/Stars';
+import { v4 as uuidv4 } from 'uuid';
+
 function App() {
+  const arr = [1, 2, 3, 's', 4, 56, 5]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {arr.map((el) => <Stars count={el} key={uuidv4()} />)}
     </div>
   );
 }
